@@ -1,0 +1,101 @@
+HTML:
+ <!--home主頁面區域-->
+     <section id="home">
+        <div class="image-slider">
+            <div class="slide">
+                <img src="/image/Home/1.png" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="/image/Home/2.png" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="/image/Home/3.png" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="/image/Home/4.png" alt="Image 4">
+            </div>
+            <div class="slide">
+                <img src="/image/Home/5.png" alt="Image 5">
+            </div>
+            <div class="slide">
+                <img src="/image/Home/6.png" alt="Image 6">
+            </div>
+            <div class="slide">
+                <img src="/image/Home/7.png" alt="Image 7">
+            </div>
+        </div>
+        <!-- 左右箭頭 -->
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+     </section>
+</section>
+
+CSS:
+#home {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 設置區段高度為視窗高度 */
+    overflow: hidden; /* 隱藏超出範圍的內容 */
+    display: flex; /* 啟用 Flexbox */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    background-color: #FDF4E6 /* 設定背景顏色為黑色，避免空白顯示 */
+}
+
+/* 圖片輪播容器 */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    transition: transform 1s ease-in-out; /* 添加過渡效果 */
+}
+
+.image-slider .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 讓圖片默認隱藏，僅顯示當前圖片 */
+.image-slider .slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.image-slider .slide.active {
+    opacity: 1;
+}
+
+/* 左右箭頭樣式 */
+button {
+    position: absolute;
+    top: 50%;
+    color: #845A07;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+/* 左右箭頭的位置 */
+#prevBtn {
+    left: 10px;
+    background-color: transparent
+}
+
+#nextBtn {
+    right: 10px;
+    background-color: transparent
+}
+/*Home-logo seciton結束*/

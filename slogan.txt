@@ -1,0 +1,32 @@
+HTML:
+<!-- 過度Slogan -->
+     <section id="slogan2">
+        <div class="slogan-text">
+            一起打造森寶的學習樂園，寶貝們在快樂學習的同時，不斷發覺自己的潛力和成就!
+        </div>
+     </section>
+
+CSS:
+/*slogan.2那欄的樣式*/
+#slogan2 {
+    position: relative;
+    width: 100%; /* 或設定固定寬度 */
+    min-height: 400px; /* 根據圖片大小調整 */
+    max-height: 100vh;
+    background-color: #FDF4E6;
+    background-image: url('/image/Normal/Slogan-2.png');
+    background-size: contain; /* 確保圖片完整覆蓋 */
+    background-position: center; /* 圖片置中 */
+    background-repeat: no-repeat; /* 避免圖片重複 */
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    text-align: center;
+}
+.slogan-text {
+    color: white; /* 讓文字在圖片上清楚可見 */
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+}

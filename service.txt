@@ -1,0 +1,210 @@
+HTML:
+<section id="services">
+    <h1>
+        <img src="/image/Normal/沐森藝術logo-04.png" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            課 程 介 紹
+    </h1>
+
+    <div class="category" id="group">
+        <h2>
+            <img src="/image//Normal/Yellow.svg" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            親 子 共 學
+        </h2>
+        <div class="course-grid">
+            <div class="course">
+                <img src="/image/Courses/小小音樂家.jpg" alt="小小音樂家">
+                <h3>小 小 音 樂 家</h3>
+                <p>8 個 月 - 4 歲</p>
+                <div class="morebottom">
+                    <img src="/image/Bottom/More.png" alt="More">
+                </div>
+            </div>
+            <div class="course">
+                <img src="/image/Courses/寶寶塗鴉.png" alt="寶寶塗鴉">
+                <h3>寶 寶 塗 鴉</h3>
+                <p>1 歲 - 2.5 歲</p>
+                <div class="morebottom">
+                    <img src="/image/Bottom/More.png" alt="More">
+                </div>
+            </div>
+            <div class="course">
+                <img src="/image/Courses/音樂創意美術.png" alt="音樂創意美術">
+                <h3>音 樂 創 意 美 術</h3>
+                <p>2.5 歲 - 5 歲</p>
+                <div class="morebottom">
+                    <img src="/image/Bottom/More.png" alt="More">
+                </div>
+            </div>
+            <div class="course">
+                <img src="/image/Courses/光影音樂舞感派對.png" alt="光影音樂舞感派對">
+                <h3>光 影 音 樂 舞 感 派 對</h3>
+                <p>10 個 月 - 5 歲</p>
+                <div class="morebottom">
+                    <img src="/image/Bottom/More.png" alt="More">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tree">            
+        <img src="/image/Normal/tree.png" alt="tree">
+    </div>
+    <div class="category" id="personal">
+        <h2>
+            <img src="/image//Normal/Pinky.svg" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            獨 立 課 程
+        </h2>
+        <div class="course-grid">
+            <div class="course">
+                <img src="/image/Courses/鍵盤遊樂園.png" alt="鍵盤遊樂園">
+                <h3>鍵 盤 遊 樂 園</h3>
+                <p>4 歲 - 6 歲</p>
+                <div class="morebottom">
+                    <img src="/image/Bottom/More.png" alt="More">
+                </div>
+            </div>
+            <div class="course">
+                <img src="/image/Courses/Piano.jpg" alt="Piano">
+                <h3>樂 器 一 對 一</h3>
+                <p>5 歲 - 8 歲</p>
+                    <div class="morebottom">
+                        <img src="/image/Bottom/More.png" alt="More">
+                    </div>
+                </div>
+                <div class="course">
+                    <img src="/image/Courses/Jazz.jpg" alt="Jazz">
+                    <h3>爵 士 鼓 課 程</h3>
+                    <p>5 歲 - 8 歲</p>
+                    <div class="morebottom">
+                        <img src="/image/Bottom/More.png" alt="More">
+                    </div>
+                </div>
+                <div class="course">
+                    <img src="/image/Courses/兒童美術.png" alt="兒童美術">
+                    <h3>兒 童 美 術</h3>
+                    <p>5 歲 - 8 歲</p>
+                    <div class="morebottom">
+                        <img src="/image/Bottom/More.png" alt="More">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="category" id="adult">
+        <h2>
+            <img src="/image//Normal/Pinky.svg" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            成 人 藝 術 美 學
+        </h2>
+        <div class="course-grid">
+            <div class="course">
+                <img src="/image/Courses/音樂美學.png" alt="音樂美學">
+                <h3>音 樂 美 學</h3>
+                <p></p>
+                <div class="morebottom">
+                    <img src="/image/Bottom/More.png" alt="More">
+                </div>
+            </div>
+            <div class="course">
+                <img src="/image/Courses/藝術美學.png" alt="藝術美學">
+                <h3>藝 術 美 學</h3>
+                <p></p>
+                    <div class="morebottom">
+                        <img src="/image/Bottom/More.png" alt="More">
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+CSS:
+/*service那欄的樣式*/
+#services {
+    min-height: 100vh;
+    background: #FDF4E6;
+    padding: 2%;
+}
+.category h2 {
+    font-size: 21px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.course-grid { /* 商品小卡區域的佈局 */
+    display: flex;
+    gap: 20px; /* 方格之間的距離 */
+    padding: 10px 0;
+    flex-wrap: nowrap; /* 禁止換行，所有卡片排成一行 */
+    justify-content: flex-start; /* 左對齊商品 */
+    overflow-x: auto; /* 讓區域能夠水平滑動 */
+    overflow-y: hidden; /* 禁止垂直滾動 */
+    scroll-snap-type: x mandatory; /* 滾動效果 */
+    scroll-behavior: smooth; /* 平滑滾動效果 */
+    margin-left: 20px; /* 調整左邊距離，根據需要調整這個數值 */
+}
+.course-grid::-webkit-scrollbar {
+    width: 1px; /* 可以調整滾動條寬度 */
+}
+.course-grid::-webkit-scrollbar-thumb {
+    background-color: #f7e9d2; /* 滾動條顏色 */
+    border-radius: 10px; /* 滾動條圓角 */
+}
+.course { /* 單個產品卡片的模式 */
+    flex: 0 0 auto; /* 讓卡片自適應區塊大小 */
+    width: 250px;
+    height: 380px; /* 固定高度 */
+    background: #f1cc94;
+    padding: 20px;
+    border-radius: 30px;
+    text-align:  center;
+    box-shadow: none;
+    transition: transform 0.3s ease-in-out;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 确保内容在卡片内垂直居中 */
+    align-items: center; /* 确保内容水平居中 */
+}
+.course img { /* 產品圖片 */
+    width: 88%;
+    height: 60%; /* 確保圖片等比例縮放 */
+    object-fit: cover;
+    border-radius: 20px;
+}
+.course h3 { /* 產品名稱 */
+    font-size: 20px;
+    margin: 15px 0 5px 0; /* 只设置底部间距，避免与下一项间距叠加 */
+}
+.course p {
+    font-size: 18px;
+    margin: 5px 0 15px 0; /* 只设置顶部间距，避免与上一个元素间距叠加 */
+}
+.morebottom {
+    width: 80%; /* 确保按钮宽度与课程卡片一致 */
+    display: flex;
+    justify-content: center; /* 居中按钮 */
+    align-items: center;
+    height: 30px; /* 设定底部区域高度 */
+    margin: 5px 0 0 0; /* 只设置顶部间距，避免与上一个元素间距叠加 */
+}
+.morebottom img { /* More图片 */
+    width: 90%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* 讓動畫更平滑 */
+}
+.morebottom:hover{
+    transform: scale(1.1); /* 放大 10% */
+}
+.tree {
+    display: flex;
+    justify-content: flex-start; /* 讓內容靠左 */
+    padding: 10px 0 0 30px;
+}
+.tree img {
+    width: 90px; /* 調整圖片寬度，可自行修改 */
+    height: auto; /* 保持圖片比例 */
+    align-items: left;
+}
+@media (max-width: 768px) { /* 響應式調整：當螢幕較小時，左右兩區塊改為上下排列 */
+
+    .course-grid {
+        flex-wrap: flex;
+    }
+}

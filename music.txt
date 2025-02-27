@@ -1,0 +1,17 @@
+HTML:
+<!-- music -->
+    <section id="music">
+        <h1>
+            <img src="/image/Normal/沐森藝術logo-04.png" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            KIDS MUSIC
+        </h1> 
+    </section>
+
+CSS:
+/* Music Playlist*/
+#music {
+    background: #FDF4E6;
+}
+#music h1{
+    padding: 20px;
+}

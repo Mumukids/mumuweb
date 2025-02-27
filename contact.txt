@@ -1,0 +1,53 @@
+HTML:
+<!-- 聯絡我們 -->
+    <section id="contact">
+        <div class="image-container">
+            <img src="/image/contact/contact.png" alt="contact">
+            <div class="overlay-text">
+                <p>
+                    <a href="https://lin.ee/b8fz6CvZ" target="_blank">沐 森 藝 術  --  官 方 客 服 ></a>
+                </p>
+                <p>
+                    <a href="https://lin.ee/b8fz6CvZ" target="_blank">課 前 須 知 ></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+CSS:
+/*contact那欄的樣式*/
+#contact {
+    padding: 0;
+    margin: 0;
+    background: #FDF4E6;
+    position: relative; /* 讓內部元素可以絕對定位 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-container {
+    position: relative;         /* 父容器設為相對定位 */
+    width: 100%;                /* 讓容器填滿父元素寬度 */
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;                /* 讓圖片填滿容器 */
+    height: auto;               /* 保持圖片比例 */
+    display: block;             /* 避免多餘空間 */
+}
+.overlay-text {
+    position: absolute;         /* 絕對定位文字 */
+    top: 30%;                   /* 垂直置中 */
+    left: 50%;                  /* 水平置中 */
+    transform: translate(-50%, -30%); /* 精準置中 */
+    color: #96512b;               /* 文字顏色 */
+    text-align: center;         /* 文字置中對齊 */
+    padding: 20px;              /* 內距，讓文字區塊更好看 */
+    border-radius: 10px;        /* 圓角邊框 */
+}
+/* 超連結樣式 */
+.overlay-text a {
+    text-decoration: none; /* 移除底線 */
+    color: inherit; /* 讓顏色與父元素一致 */
+}

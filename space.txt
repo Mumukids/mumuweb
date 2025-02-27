@@ -1,0 +1,32 @@
+HTML:
+<!-- 空間環境 -->
+    <section id="space-info">
+        <h1>
+            <img src="/image/Normal/沐森藝術logo-04.png" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            空 間 介 紹
+        </h1>
+        <div class="space-image">
+            <img src="/image/space/mainclassroom.png" alt="mainclassroom">
+            <img src="/image/space/pianoclassroom.png" alt="pianoclassroom">
+        </div>
+    </section>
+
+CSS:
+/* 針對父容器 space-image 使用 Flexbox */
+#space-info h1{
+    padding: 20px;
+}
+.space-image {
+    display: flex;
+    justify-content: center; /* 水平置中圖片 */
+    align-items: center; /* 垂直置中圖片 */
+    gap: 20px; /* 設定圖片之間的間距，根據需要調整 */
+    flex-wrap: wrap; /* 如果圖片過多，則會換行顯示 */
+    height: 100%; /* 父容器的高度設定 */
+  }
+  
+  /* 針對圖片的大小設定 */
+.space-image img {
+    width: 500px; /* 設定圖片寬度 */
+    height: auto; /* 保持圖片比例 */
+}  

@@ -1,0 +1,84 @@
+HTML:
+<!-- 師資介紹 -->
+    <section id="teacher">
+        <h1>
+            <img src="/image/Normal/沐森藝術logo-04.png" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            合 作 藝 術 家
+        </h1>
+        <div class="teacher-container">
+            <div class="teacher-card">
+                <img src="/image/Teachers/廖元宏.png" alt="廖元宏" class="teacher-avatar">
+                <h2>Art Director</h2>
+                <p>廖元宏</p>
+                <p>Brain Liao</p>
+            </div>
+            <div class="teacher-card">
+                <img src="/image/Teachers/Jenny.png" alt="Jenny" class="teacher-avatar">
+                <h2>Art Director</h2>
+                <p>林姿妤</p>
+                <p>Jenny Lin</p>
+            </div>
+            <div class="teacher-card">
+                <img src="/image/Teachers/袁鼎鈞.png" alt="袁鼎鈞" class="teacher-avatar">
+                <h2>Musician</h2>
+                <p>袁鼎鈞</p>
+                <p>Aaron Yuan</p>
+            </div>
+            <div class="teacher-card">
+                <img src="/image/Teachers/陳冠榮.png" alt="陳冠榮" class="teacher-avatar">
+                <h2>Musician</h2>
+                <p>陳冠榮</p>
+                <p>Ron Chen</p>
+            </div>
+            <div class="teacher-card">
+                <img src="/image/Teachers/陳韋辰.png" alt="陳韋辰" class="teacher-avatar">
+                <h2>Artist</h2>
+                <p>陳韋辰</p>
+                <p>Wei Chen</p>
+            </div>
+            <div class="teacher-card">
+                <img src="/image/Teachers/歐老師.png" alt="歐雅婷" class="teacher-avatar">
+                <h2>Piano Teacher</h2>
+                <p>歐雅婷</p>
+            </div>
+
+    </section>
+
+CSS:
+/*teacher那欄的樣式*/
+#teacher {
+    background: #FDF4E6;
+    padding: 20px;
+}
+.teacher-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+}
+.teacher-card {
+    flex: 0 0 auto;
+    width: 230px;
+    height: 380px;
+    text-align: center;
+    background: none;
+    border: none;
+    border-radius: 30px;
+    padding: 30px;
+    scroll-snap-align: start;
+}
+.teacher-avatar {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.teacher-container::-webkit-scrollbar {
+    width: 1px; /* 可以調整滾動條寬度 */
+}
+.teacher-container::-webkit-scrollbar-thumb {
+    background-color: #f7e9d2; /* 滾動條顏色 */
+    border-radius: 10px; /* 滾動條圓角 */
+}

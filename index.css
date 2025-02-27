@@ -1,0 +1,584 @@
+/* 整個頁面字型設定 */
+@font-face {
+    font-family: 'Myjf'; /* 自訂字型名稱 */
+    src: url('/fonts/jf-openhuninn-2.1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Myjf", sans-serif;
+    color: #845A07;
+}
+
+h1 {
+    font-size: 28px;
+    padding-left: 0; /* 移除多餘的左側間距 */
+    margin-left: 0; /* 確保沒有左邊外距 */
+}
+
+main {
+    padding-top: 40px;
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+    max-width: none; /* 限制最大寬度，避免過寬 */
+    scroll-margin-top: 80px; /*避免標題被擋住*/
+    min-height: 38.9vh; /*預設高度*/
+    position: relative;
+    top: 20px;
+    padding-top: 20px;
+}
+
+/*導航欄的背景樣式*/
+.navbar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+} 
+/* 調整 LOGO 位置到最左側 */
+.logo {
+    margin-right: auto;
+}
+.logo img {
+    height: 40px;
+}
+/* 讓導航欄固定在頂部 */
+nav {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #FFE7C1;
+    color: #845A07;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+/* 選定導航欄中滑鼠懸停效果 */
+nav a {
+    color: #845A07; /* 保持原本的文字顏色 */
+    text-decoration: none; /* 移除底線 */
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    padding-left: 40px; /* 預留空間給 logo */
+    padding: 10px 20px;
+}
+/* 移除 LOGO 懸停效果 */
+nav a.logo:hover::before {
+    display: none;
+}
+nav a.logo:hover {
+    transform: none;
+}
+/* 選單的懸停效果 */
+nav a:not(.logo):hover {
+    transform: translateX(5px); /* 文字往右移 */
+}
+
+/* 懸停時顯示 logo 圖片 */
+nav a:not(.logo):before {
+    content: "";
+    position: absolute;
+    left: 5px; /* 控制 logo 的初始位置 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* 設定 logo 寬度 */
+    height: 20px; /* 設定 logo 高度 */
+    background-image: url('/image/Normal/Greeny.svg'); /* 替換成你的 logo 圖片路徑 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease, left 0.3s ease;
+}
+
+nav a:not(.logo):hover::before {
+    opacity: 1;
+    left: -10px; /* 微調 logo 位置，使其滑入 */
+}
+    /* 漢堡選單樣式 */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        background: none;  /* 移除背景 */
+        border: none;  /* 移除邊框 */
+        padding: 0;
+        margin: 0;
+    }
+    /* 移除漢堡選單 hover 背景 */
+    .hamburger:hover {
+        background: none;
+    }
+
+    .hamburger span {
+        height: 3px;
+        width: 25px;
+        background: #845A07;
+        margin: 3px;
+        border-radius: 2px;
+    }
+
+/* 下拉選單容器 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 隱藏下拉選單內容 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFE7C1;
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 下拉選單項目 */
+.dropdown-content a {
+    color: #845A07;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+/* 滑鼠懸停時顯示下拉選單 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 下拉選單項目懸停效果 */
+.dropdown-content a:hover {
+    background-color: #FFD9A0;
+}
+
+
+
+    /* 手機響應式設計 */
+    @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+
+        .nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: #FFE7C1;
+            padding: 10px 0;
+        }
+
+        .nav a {
+            padding: 15px 20px;  /* 增加行距 */
+        }
+
+        .nav.active {
+            display: flex;
+        }
+        .dropdown {
+            position: static;
+            display: none;
+            width: 100%;
+            box-shadow: none;
+        }
+    
+        .dropdown-container .dropdown-toggle {
+            display: block;
+            padding: 10px;
+        }
+    
+        .dropdown-container.active .dropdown {
+            display: block;
+        }
+    }
+
+/*以下都是home-logo section的樣式設定*/
+#home {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 設置區段高度為視窗高度 */
+    overflow: hidden; /* 隱藏超出範圍的內容 */
+    display: flex; /* 啟用 Flexbox */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    background-color: #FDF4E6 /* 設定背景顏色為黑色，避免空白顯示 */
+}
+
+/* 圖片輪播容器 */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    transition: transform 1s ease-in-out; /* 添加過渡效果 */
+}
+
+.image-slider .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 讓圖片默認隱藏，僅顯示當前圖片 */
+.image-slider .slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.image-slider .slide.active {
+    opacity: 1;
+}
+
+/* 左右箭頭樣式 */
+button {
+    position: absolute;
+    top: 50%;
+    color: #845A07;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+/* 左右箭頭的位置 */
+#prevBtn {
+    left: 10px;
+    background-color: transparent
+}
+
+#nextBtn {
+    right: 10px;
+    background-color: transparent
+}
+/*Home-logo seciton結束*/
+
+/*about那欄的樣式*/
+#about {
+    background-color: #FDF4E6;
+}
+
+#about h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 允許內容自動換行 */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.subtitle {
+    flex: 1;
+    padding-right: 20px; /* Add some space between the text and the image */
+    margin-left: 96px;
+}
+
+.subtitle p {
+    line-height: 2.0; /* 增加行距，數值可以根據需求調整 */
+    letter-spacing: 3px; /* 增加字距，數值可以根據需求調整 */
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 50%;
+    height: auto;
+    /* You can also adjust the width and height if necessary */
+}
+.contant {
+    width: 80%; /* 設定容器寬度，根據需求調整 */
+    margin: 0 auto 0; /* 讓容器在頁面中居中 */
+    padding-left: 20px; /* 左側距離 */
+    padding-right: 20px; /* 右側距離 */
+    display: block;
+    clear: both;
+}
+.contant p {
+    line-height: 2.0; /* 增加行距，數值可以根據需求調整 */
+    letter-spacing: 3px; /* 增加字距，數值可以根據需求調整 */
+}
+
+.starsdown img {
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+
+
+/*about seciton結束*/
+
+/*service那欄的樣式*/
+#services {
+    min-height: 100vh;
+    background: #FDF4E6;
+    padding: 2%;
+}
+.category h2 {
+    font-size: 21px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.course-grid { /* 商品小卡區域的佈局 */
+    display: flex;
+    gap: 20px; /* 方格之間的距離 */
+    padding: 10px 0;
+    flex-wrap: nowrap; /* 禁止換行，所有卡片排成一行 */
+    justify-content: flex-start; /* 左對齊商品 */
+    overflow-x: auto; /* 讓區域能夠水平滑動 */
+    overflow-y: hidden; /* 禁止垂直滾動 */
+    scroll-snap-type: x mandatory; /* 滾動效果 */
+    scroll-behavior: smooth; /* 平滑滾動效果 */
+    margin-left: 20px; /* 調整左邊距離，根據需要調整這個數值 */
+}
+.course-grid::-webkit-scrollbar {
+    width: 1px; /* 可以調整滾動條寬度 */
+}
+.course-grid::-webkit-scrollbar-thumb {
+    background-color: #f7e9d2; /* 滾動條顏色 */
+    border-radius: 10px; /* 滾動條圓角 */
+}
+.course { /* 單個產品卡片的模式 */
+    flex: 0 0 auto; /* 讓卡片自適應區塊大小 */
+    width: 250px;
+    height: 380px; /* 固定高度 */
+    background: #f1cc94;
+    padding: 20px;
+    border-radius: 30px;
+    text-align:  center;
+    box-shadow: none;
+    transition: transform 0.3s ease-in-out;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 确保内容在卡片内垂直居中 */
+    align-items: center; /* 确保内容水平居中 */
+}
+.course img { /* 產品圖片 */
+    width: 88%;
+    height: 60%; /* 確保圖片等比例縮放 */
+    object-fit: cover;
+    border-radius: 20px;
+}
+.course h3 { /* 產品名稱 */
+    font-size: 20px;
+    margin: 15px 0 5px 0; /* 只设置底部间距，避免与下一项间距叠加 */
+}
+.course p {
+    font-size: 18px;
+    margin: 5px 0 15px 0; /* 只设置顶部间距，避免与上一个元素间距叠加 */
+}
+.morebottom {
+    width: 80%; /* 确保按钮宽度与课程卡片一致 */
+    display: flex;
+    justify-content: center; /* 居中按钮 */
+    align-items: center;
+    height: 30px; /* 设定底部区域高度 */
+    margin: 5px 0 0 0; /* 只设置顶部间距，避免与上一个元素间距叠加 */
+}
+.morebottom img { /* More图片 */
+    width: 90%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* 讓動畫更平滑 */
+}
+.morebottom:hover{
+    transform: scale(1.1); /* 放大 10% */
+}
+.tree {
+    display: flex;
+    justify-content: flex-start; /* 讓內容靠左 */
+    padding: 10px 0 0 30px;
+}
+.tree img {
+    width: 90px; /* 調整圖片寬度，可自行修改 */
+    height: auto; /* 保持圖片比例 */
+    align-items: left;
+}
+@media (max-width: 768px) { /* 響應式調整：當螢幕較小時，左右兩區塊改為上下排列 */
+
+    .course-grid {
+        flex-wrap: flex;
+    }
+}
+
+/*slogan.2那欄的樣式*/
+#slogan2 {
+    position: relative;
+    width: 100%; /* 或設定固定寬度 */
+    min-height: 400px; /* 根據圖片大小調整 */
+    max-height: 100vh;
+    background-color: #FDF4E6;
+    background-image: url('/image/Normal/Slogan-2.png');
+    background-size: contain; /* 確保圖片完整覆蓋 */
+    background-position: center; /* 圖片置中 */
+    background-repeat: no-repeat; /* 避免圖片重複 */
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    text-align: center;
+}
+.slogan-text {
+    color: white; /* 讓文字在圖片上清楚可見 */
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/*teacher那欄的樣式*/
+#teacher {
+    background: #FDF4E6;
+    padding: 20px;
+}
+.teacher-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+}
+.teacher-card {
+    flex: 0 0 auto;
+    width: 230px;
+    height: 380px;
+    text-align: center;
+    background: none;
+    border: none;
+    border-radius: 30px;
+    padding: 30px;
+    scroll-snap-align: start;
+}
+.teacher-avatar {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.teacher-container::-webkit-scrollbar {
+    width: 1px; /* 可以調整滾動條寬度 */
+}
+.teacher-container::-webkit-scrollbar-thumb {
+    background-color: #f7e9d2; /* 滾動條顏色 */
+    border-radius: 10px; /* 滾動條圓角 */
+}
+
+/*campaign那欄的樣式*/
+#campaign {
+    background: #FDF4E6;
+}
+#campaign h1{
+    padding: 20px;
+}
+
+/* Music Playlist*/
+#music {
+    background: #FDF4E6;
+}
+#music h1{
+    padding: 20px;
+}
+.playlist {
+    margin: 2px;
+    text-align: center;
+}
+
+.spotify-player iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1px;
+    background-color: none;
+    color: white;
+}
+
+/* 針對父容器 space-image 使用 Flexbox */
+#space-info h1{
+    padding: 20px;
+}
+.space-image {
+    display: flex;
+    justify-content: center; /* 水平置中圖片 */
+    align-items: center; /* 垂直置中圖片 */
+    gap: 20px; /* 設定圖片之間的間距，根據需要調整 */
+    flex-wrap: wrap; /* 如果圖片過多，則會換行顯示 */
+    height: 100%; /* 父容器的高度設定 */
+  }
+  
+  /* 針對圖片的大小設定 */
+.space-image img {
+    width: 500px; /* 設定圖片寬度 */
+    height: auto; /* 保持圖片比例 */
+}  
+
+
+/*contact那欄的樣式*/
+#contact {
+    padding: 0;
+    margin: 0;
+    background: #FDF4E6;
+    position: relative; /* 讓內部元素可以絕對定位 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-container {
+    position: relative;         /* 父容器設為相對定位 */
+    width: 100%;                /* 讓容器填滿父元素寬度 */
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;                /* 讓圖片填滿容器 */
+    height: auto;               /* 保持圖片比例 */
+    display: block;             /* 避免多餘空間 */
+}
+.overlay-text {
+    position: absolute;         /* 絕對定位文字 */
+    top: 30%;                   /* 垂直置中 */
+    left: 50%;                  /* 水平置中 */
+    transform: translate(-50%, -30%); /* 精準置中 */
+    color: #96512b;               /* 文字顏色 */
+    text-align: center;         /* 文字置中對齊 */
+    padding: 20px;              /* 內距，讓文字區塊更好看 */
+    border-radius: 10px;        /* 圓角邊框 */
+}
+/* 超連結樣式 */
+.overlay-text a {
+    text-decoration: none; /* 移除底線 */
+    color: inherit; /* 讓顏色與父元素一致 */
+}

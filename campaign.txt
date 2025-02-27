@@ -1,0 +1,16 @@
+HTML:
+<!-- 活動展演 -->
+    <section id="campaign">
+        <h1>
+            <img src="/image/Normal/沐森藝術logo-04.png" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+            活動展演
+        </h1>
+
+CSS:
+/*campaign那欄的樣式*/
+#campaign {
+    background: #FDF4E6;
+}
+#campaign h1{
+    padding: 20px;
+}

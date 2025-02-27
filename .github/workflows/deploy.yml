@@ -15,6 +15,6 @@ jobs:
 
     - name: Deploy to Server  # 部署到伺服器
       run: |
-        ssh -o StrictHostKeyChecking=no user@yourserver "cd C:\Users\Matteo Lo\Desktop\Mumuweb\.github && git pull origin main && cp -r * /var/www/html/"
+        ssh -o StrictHostKeyChecking=no user@192.168.68.59 "cd C:\Users\Matteo Lo\Desktop\Mumuweb\.github && git pull origin master && cp -r * /var/www/html/"
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PUBLIC_KEY }}

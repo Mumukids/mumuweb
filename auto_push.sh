@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# ²¾°Ê¨ì§Aªº±M®×¥Ø¿ı
+# ï¿½ï¿½ï¿½Ê¨ï¿½Aï¿½ï¿½ï¿½Mï¿½×¥Ø¿ï¿½
 cd "C:\Users\Matteo Lo\Desktop\Mumuweb"
 
-# ©Ô¨ú³Ì·sªº»·µ{§ó·s
+# ï¿½Ô¨ï¿½ï¿½Ì·sï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½s
 git pull origin master
 
-# ²K¥[©Ò¦³§ó§ï
+# ï¿½Kï¿½[ï¿½Ò¦ï¿½ï¿½ï¿½ï¿½
 git add .
 
-# ´£¥æ§ó§ï
-git commit -m "¦Û°Ê´£¥æ§ó·s"
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+git commit -m "è‡ªå‹•æäº¤æ›´æ–°"
 
-# ±À°e¨ì GitHub
+# ï¿½ï¿½ï¿½eï¿½ï¿½ GitHub
 git push origin master

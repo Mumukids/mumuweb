@@ -1,0 +1,20 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - master  # 當你推送到 `main` 分支時觸發部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # 使用 Ubuntu 作為運行環境
+
+    steps:
+    - name: Checkout code  # 檢出代碼
+      uses: actions/checkout@v2
+
+    - name: Deploy to Server  # 部署到伺服器
+      run: |
+        ssh -o StrictHostKeyChecking=no user@yourserver "cd C:\Users\Matteo Lo\Desktop\Mumuweb\.github && git pull origin main && cp -r * /var/www/html/"
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

@@ -26,10 +26,11 @@ section {
     margin: 0 auto;
     max-width: none; /* 限制最大寬度，避免過寬 */
     scroll-margin-top: 80px; /*避免標題被擋住*/
-    min-height: 38.9vh; /*預設高度*/
+    min-height: 0; /*預設高度*/
     position: relative;
     top: 20px;
     padding-top: 20px;
+    height: auto;
 }
 
 /*導航欄的背景樣式*/
@@ -168,7 +169,15 @@ nav a:not(.logo):hover::before {
     @media (max-width: 768px) {
         .hamburger {
             display: flex;
+            position: absolute;
+            top: 30px; /* 調整漢堡選單距離頂部的位置 */
+            right: 50px; /* 將漢堡選單放置於右邊 */
         }
+/* 在漢堡按鈕懸停時顯示下拉選單 */
+.hamburger:hover + .nav {
+    display: flex;  /* 顯示導航列 */
+}
+
 
         .nav {
             display: none;
@@ -189,19 +198,33 @@ nav a:not(.logo):hover::before {
             display: flex;
         }
         .dropdown {
-            position: static;
+            position: relative;
+            display: inline-block;
+            width: 145px;
+        }
+    
+        .dropdown-content {
             display: none;
-            width: 100%;
+            position: absolute;
+            top: 0;  /* 控制下拉選單的上下位置 */
+            left: 100%; /* 控制下拉選單顯示在右邊 */
+            background-color: #fdf0db;
+            width: 50px;
             box-shadow: none;
         }
-    
-        .dropdown-container .dropdown-toggle {
+
+
+        /* 下拉選單項目 */
+        .dropdown-content a {
+            color: #845A07;
+            padding: 10px 20px;
+            text-decoration: none;
             display: block;
-            padding: 10px;
         }
-    
-        .dropdown-container.active .dropdown {
-            display: block;
+
+        /* 第二層選單項目懸停效果 */
+        .dropdown-content a:hover {
+            background-color: #FFD9A0;
         }
     }
 
@@ -532,16 +555,18 @@ footer {
 }
 .space-image {
     display: flex;
-    justify-content: center; /* 水平置中圖片 */
-    align-items: center; /* 垂直置中圖片 */
+    justify-content: space-between; /* 水平分布圖片 */
     gap: 20px; /* 設定圖片之間的間距，根據需要調整 */
     flex-wrap: wrap; /* 如果圖片過多，則會換行顯示 */
-    height: 100%; /* 父容器的高度設定 */
   }
   
   /* 針對圖片的大小設定 */
+.space-image-1, .space-image-2 {
+    flex: 1; /* 使每個圖片容器平分剩餘空間 */
+    max-width: 48%; /* 最大寬度設置為 48% 來保證兩張圖片能並排顯示 */
+}
 .space-image img {
-    width: 500px; /* 設定圖片寬度 */
+    width: 100%; /* 圖片寬度設置為 100% 以適應父容器 */
     height: auto; /* 保持圖片比例 */
 }  
 

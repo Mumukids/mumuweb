@@ -51,3 +51,13 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function(e)
     e.preventDefault();
     this.parentElement.classList.toggle('active');
 });
+
+// 假設你已經有一個控制漢堡選單開關的功能，這裡增加對 dropdown 的控制
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', function() {
+        // 切換第一層選單按鈕的位置，並顯示或隱藏第二層選單
+        this.classList.toggle('active'); // 顯示或隱藏第二層選單
+    });
+});

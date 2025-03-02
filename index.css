@@ -361,7 +361,6 @@ button {
     line-height: 2.0; /* 增加行距，數值可以根據需求調整 */
     letter-spacing: 3px; /* 增加字距，數值可以根據需求調整 */
 }
-
 .starsdown img {
     display: block;
     margin-left: auto;

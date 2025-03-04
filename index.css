@@ -537,19 +537,28 @@ footer {
 }
 .space-image {
     display: flex;
-    justify-content: space-between; /* 水平分布圖片 */
+    justify-content: center; /* 水平分布圖片 */
     gap: 20px; /* 設定圖片之間的間距，根據需要調整 */
-    flex-wrap: wrap; /* 如果圖片過多，則會換行顯示 */
+    flex-direction: column;
+    align-items: center;
   }
   
   /* 針對圖片的大小設定 */
-.space-image-1, .space-image-2 {
-    flex: 1; /* 使每個圖片容器平分剩餘空間 */
-    max-width: 48%; /* 最大寬度設置為 48% 來保證兩張圖片能並排顯示 */
+  .space-image-1 {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 50px; /* 讓第一張圖片與第二張圖片之間有更多距離 */
 }
+
+.space-image-2 {
+    width: 100%;
+    max-width: 600px;
+}
+
 .space-image img {
     width: 100%; /* 圖片寬度設置為 100% 以適應父容器 */
     height: auto; /* 保持圖片比例 */
+    justify-content: center; /* 水平分布圖片 */
 }  
 
 

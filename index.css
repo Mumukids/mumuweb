@@ -553,6 +553,7 @@ footer {
 .space-image-2 {
     width: 100%;
     max-width: 600px;
+    margin-bottom: 20px; /* 讓第一張圖片與第二張圖片之間有更多距離 */
 }
 
 .space-image img {

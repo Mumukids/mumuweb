@@ -61,3 +61,11 @@ dropdowns.forEach(dropdown => {
         this.classList.toggle('active'); // 顯示或隱藏第二層選單
     });
 });
+
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = 'flex';
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+}

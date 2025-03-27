@@ -69,3 +69,25 @@ function openPopup(popupId) {
 function closePopup(popupId) {
     document.getElementById(popupId).style.display = 'none';
 }
+
+//campaign
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.querySelector('.slides-wrapper');
+    const totalImages = 25; // 共25张照片
+    
+    // 清空容器（确保没有残留内容）
+    wrapper.innerHTML = '';
+
+    // 动态加载所有照片
+    for (let i = 1; i <= totalImages; i++) {
+        wrapper.innerHTML += `
+            <div class="slide">
+                <img src="/image/campaign/${i}.jpg" alt="活動照片 ${i}">
+            </div>
+        `;
+        console.log(`已添加照片: /image/campaign/${i}.jpg`); // 调试用
+    }
+
+    // 立即检查生成的HTML（调试用）
+    console.log("生成的HTML：", wrapper.innerHTML);
+});

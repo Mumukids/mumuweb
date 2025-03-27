@@ -30,14 +30,13 @@ main {
 }
 
 section {
-    width: 100%;
-    height: fit-content;
+    width: 100vw;
     margin: 0 auto;
-    max-width: 1400px; /* 限制最大寬度，避免過寬 */
+    max-width: none; /* 限制最大寬度，避免過寬 */
     scroll-margin-top: 80px; /*避免標題被擋住*/
     position: relative;
     padding-top: 20px;
-    background-color: #FDF4E6;
+    background-color: #fff0e2;
 }
 .content {
     width: min(80vw, 800px); /* 讓內容根據螢幕縮放 */
@@ -549,12 +548,16 @@ button {
 }
 
 /*campaign那欄的樣式*/
-#campaign {
-    background: #FDF4E6;
-}
-#campaign h1{
-    padding: 20px;
-    margin-bottom: 20px; /* 增加標題與圖片間距 */
+
+
+@media (max-width: 768px) {
+    .slides-wrapper {
+        height: 300px;
+    }
+    
+    .slider-nav {
+        padding: 10px;
+    }
 }
 
 /* Music Playlist*/

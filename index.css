@@ -418,6 +418,19 @@ button {
     box-shadow: -2px 2px 4px rgba(0,0,0,0.2); /* 右下阴影增强立体感 */
     transform: translateY(-10%) translateX(10%); /* 稍微超出卡片边缘 */
 }
+.tag-limited-1 {
+    position: absolute;
+    top: 0;          /* 贴齐卡片顶部 */
+    right: 0;        /* 贴齐卡片右侧 */
+    background: #ff5757; 
+    color: white;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 0 20px 0 10px; /* 右上角圆角，左下角直角 */
+    z-index: 2;      /* 确保在图片和文字上方 */
+    box-shadow: -2px 2px 4px rgba(0,0,0,0.2); /* 右下阴影增强立体感 */
+    transform: translateY(-10%) translateX(10%); /* 稍微超出卡片边缘 */
+}
 .morebottom {
     width: 80%; /* 确保按钮宽度与课程卡片一致 */
     display: flex;

@@ -44,200 +44,230 @@ section {
   }
   
   
-/*導航欄的背景樣式*/
+/* 基礎樣式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 導航列容器 */
 .navbar {
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 20px;
-} 
-/* 調整 LOGO 位置到最左側 */
-.logo {
-    margin-right: auto;
-}
-.logo img {
-    height: 40px;
-}
-/* 讓導航欄固定在頂部 */
-nav {
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: #FFE7C1;
-    color: #845A07;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffe3b5; /* 可根據需要調整 */
+    position: relative;
     z-index: 1000;
 }
-/* 選定導航欄中滑鼠懸停效果 */
-nav a {
-    color: #845A07; /* 保持原本的文字顏色 */
-    text-decoration: none; /* 移除底線 */
-    position: relative;
-    display: inline-block;
+
+/* Logo 樣式 */
+.logo img {
+    height: 50px; /* 根據你的logo調整 */
     transition: transform 0.3s ease;
-    padding-left: 40px; /* 預留空間給 logo */
-    padding: 10px 20px;
-}
-/* 移除 LOGO 懸停效果 */
-nav a.logo:hover::before {
-    display: none;
-}
-nav a.logo:hover {
-    transform: none;
-}
-/* 選單的懸停效果 */
-nav a:not(.logo):hover {
-    transform: translateX(5px); /* 文字往右移 */
 }
 
-/* 懸停時顯示 logo 圖片 */
-nav a:not(.logo):before {
-    content: "";
-    position: absolute;
-    left: 5px; /* 控制 logo 的初始位置 */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px; /* 設定 logo 寬度 */
-    height: 20px; /* 設定 logo 高度 */
-    background-image: url('/image/Normal/Greeny.svg'); /* 替換成你的 logo 圖片路徑 */
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.3s ease, left 0.3s ease;
+.logo:hover img {
+    transform: scale(1.05);
 }
 
-nav a:not(.logo):hover::before {
-    opacity: 1;
-    left: -10px; /* 微調 logo 位置，使其滑入 */
+/* 導航連結基礎樣式 */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
-    /* 漢堡選單樣式 */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        background: none;  /* 移除背景 */
-        border: none;  /* 移除邊框 */
-        padding: 0;
-        margin: 0;
-    }
-    /* 移除漢堡選單 hover 背景 */
-    .hamburger:hover {
-        background: none;
-    }
 
-    .hamburger span {
-        height: 3px;
-        width: 25px;
-        background: #845A07;
-        margin: 3px;
-        border-radius: 2px;
-    }
+.nav a {
+    text-decoration: none;
+    color: #845A07; /* 文字顏色可調整 */
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    display: inline-block;
+}
 
 /* 下拉選單容器 */
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
-/* 隱藏下拉選單內容 */
+/* 下拉內容 (隱藏狀態) */
 .dropdown-content {
     display: none;
     position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 4px;
     top: 100%;
     left: 0;
-    background-color: #FFE7C1;
-    min-width: 160px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
 }
 
-/* 下拉選單項目 */
 .dropdown-content a {
-    color: #845A07;
-    padding: 10px 20px;
-    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* 漢堡菜單按鈕 (默認隱藏) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.hamburger span {
     display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #845A07;
+    margin: 4px 0;
+    transition: all 0.3s ease;
 }
 
-/* 滑鼠懸停時顯示下拉選單 */
-.dropdown:hover .dropdown-content {
+/* 鼠標懸停效果 - 文字移動和圖標 */
+.nav a:hover {
+    transform: translateX(10px);
+    color: #845A07; /* 懸停顏色可調整 */
+}
+
+.nav a:hover::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('/image/Normal/Greeny.svg'); /* 替換為你的圖標路徑 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    position: relative;
+    left: -5px;
+}
+
+/* 響應式設計 - 中等屏幕 (情況2) */
+@media (max-width: 1024px) {
+  /* 導航列容器 */
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Logo 和漢堡分居兩側 */
+    align-items: center;
+    padding: 1rem;
+    position: relative; /* 僅在需要絕對定位時添加 */
+}
+
+/* 強制漢堡按鈕靠右 */
+.hamburger {
     display: block;
+    margin-left: auto; /* 方法1：推薦 */
+    /* 或使用方法2：絕對定位 */
+    /* position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%); */
 }
 
-/* 下拉選單項目懸停效果 */
-.dropdown-content a:hover {
-    background-color: #FFD9A0;
-}
-
-
-
-    /* 手機響應式設計 */
-    @media (max-width: 768px) {
-        .hamburger {
-            display: flex;
-            position: absolute;
-            top: 30px; /* 調整漢堡選單距離頂部的位置 */
-            right: 50px; /* 將漢堡選單放置於右邊 */
-        }
-/* 在漢堡按鈕懸停時顯示下拉選單 */
-.hamburger:hover + .nav {
-    display: flex;  /* 顯示導航列 */
-}
-
-
-        .nav {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            background: #FFE7C1;
-            padding: 10px 0;
-        }
-
-        .nav a {
-            padding: 15px 20px;  /* 增加行距 */
-        }
-
-        .nav.active {
-            display: flex;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            width: 145px;
-        }
-    
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 0;  /* 控制下拉選單的上下位置 */
-            left: 100%; /* 控制下拉選單顯示在右邊 */
-            background-color: #fdf0db;
-            width: 50px;
-            box-shadow: none;
-        }
-
-
-        /* 下拉選單項目 */
-        .dropdown-content a {
-            color: #845A07;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* 第二層選單項目懸停效果 */
-        .dropdown-content a:hover {
-            background-color: #FFD9A0;
-        }
+/* 其他樣式保持不變 */
+.nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
+
+    .nav.active {
+    display: flex;
+    }
+    
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 1rem; /* 讓子選項稍微內縮 */
+    }
+    
+    .dropdown-content.active {
+        display: block;
+    }
+    
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 1rem; /* 距離右邊 1rem */
+        top: 50%;
+        transform: translateY(-50%); /* 垂直居中 */
+    }
+    
+    /* 漢堡菜單動畫 */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .nav a:hover {
+        transform: translateX(10px); /* 文字向右滑動 */
+        transition: transform 0.3s ease;
+    }
+
+    .nav a:hover::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('/image/Normal/Greeny.svg'); /* 替換成你的圖標 */
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 8px;
+        position: relative;
+        left: -5px;
+    }
+}
+
+/* 響應式設計 - 手機屏幕 (情況3) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    /* 移除電腦版的懸停效果 */
+    .nav a:hover {
+        transform: none;
+    }
+    
+    .nav a:hover::before {
+        display: none;
+    }
+    
+    /* 手機版點擊效果 */
+    .nav a {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}
 
 /*以下都是home-logo section的樣式設定*/
 #home {

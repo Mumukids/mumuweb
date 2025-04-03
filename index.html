@@ -367,18 +367,61 @@
                 </div>
             </div>
             <div class="teacher-card">
-                <img src="/image/Teachers/陳韋辰.png" alt="陳韋辰" class="teacher-avatar">
+                <img src="/image/Teachers/陳韋辰.png" alt="陳韋辰" class="teacher-avatar" onclick="openPopup('popup5')">
                 <h2>Artist</h2>
                 <p>陳韋辰</p>
                 <p>Wei Chen</p>
+                
+                <div id="popup5" class="popup">
+                    <div class="popup-content">
+                        <span class="close" onclick="closePopup('popup5')">&times;</span>
+                        <h2>陳韋辰</h2>
+                        <h3>Wei Chen</h3>
+                        <h5>｜專業領域｜</h5>
+                        <p>升學班</p>
+                        <p>成人繪畫、DIY自由畫</p>
+                        <p>國內外作品集</p>
+                        <h5>｜媒材藝術課程｜</h5>
+                        <p>素描、水彩、粉彩、油畫、壓克力</p>
+                        <h5>｜經歷｜</h5>
+                        <p>台北柏思畫室 教師</p>
+                        <p>權倫國際藝術 教師</p>
+                        <h5>〈展覽〉</h5>
+                        <p>●2021『其實有時候只想哇啊啊啊啊地倒在地上哭』北藝大美術系第36屆畢業展
+                        <p>●2020『找不到替代文字』第33屆台北藝術大學美術系展
+                        <p>●2019『拾彩計畫 秋季』 北藝大南北畫廊   
+                        <p>●2019『大字漂向西北』八里大洲造船廠
+                        <p>●2019『行』水彩個展
+                            
+                        <h5>〈得獎經歷〉</h5>
+                        <p>●2016台北市政府林家花園寫生比賽第一名
+                        <p>●2016水漾寫生比賽第一名
+                        <p>●2019新世紀淺力畫展 特優
+                        <p>●2019台北市寫生華陽獎 優選
+                        <p> ●2019 台北市光華盃寫生比賽 優選
+                    </div>
+                </div>
             </div>
             <div class="teacher-card">
-                <img src="/image/Teachers/歐老師.png" alt="歐雅婷" class="teacher-avatar">
+                <img src="/image/Teachers/歐老師.png" alt="歐雅婷" class="teacher-avatar" onclick="openPopup('popup6')">
                 <h2>Musician</h2>
                 <p>歐雅婷</p>
                 <p>Michelle Ou</p>
-            </div>
 
+                <div id="popup6" class="popup">
+                    <div class="popup-content">
+                        <span class="close" onclick="closePopup('popup6')">&times;</span>
+                        <h2>歐雅婷</h2>
+                        <h3> Michelle Ou</h3>
+                        <h5>｜專業領域｜</h5>
+                        <p>幼兒鋼琴 </p>
+                        <p>兒童鋼琴</p>
+                        <p>成人鋼琴</p>
+                        <p>樂理、聽奏、視奏、鍵盤和聲</p>
+                        <h5>｜經歷｜</h5>
+                        <p>● 畢業於東吳大學音樂系 主修鋼琴</p>
+                        <p>●2019年起擔任維也納音樂檢定台北區鋼琴組評審</p>
+            </div>
     </section>
 
 <!-- 活動展演 -->
@@ -387,12 +430,32 @@
             <img src="/image/Normal/沐森藝術logo-04.png" alt="Icon" style="width: 24px; height: 24px; vertical-align: middle;">
             活動展演
         </h1>
-        <div class="slider-container">
-            <div class="slides-wrapper"></div> <!-- 照片动态插入这里 -->
-            <button class="prev">❮</button>
-            <button class="next">❯</button>
-            <div class="dots-container"></div>
-        </div>
+            <div class="image-slider">
+                <div class="slide">
+                    <img src="/image/Home/1.png" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="/image/Home/2.png" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="/image/Home/3.png" alt="Image 3">
+                </div>
+                <div class="slide">
+                    <img src="/image/Home/4.png" alt="Image 4">
+                </div>
+                <div class="slide">
+                    <img src="/image/Home/5.png" alt="Image 5">
+                </div>
+                <div class="slide">
+                    <img src="/image/Home/6.png" alt="Image 6">
+                </div>
+                <div class="slide">
+                    <img src="/image/Home/7.png" alt="Image 7">
+                </div>
+            </div>
+            <!-- 左右箭頭 -->
+            <button class="prev" id="prevBtn">&#10094;</button>
+            <button class="next" id="nextBtn">&#10095;</button>
     </section>
 
 <!-- music -->

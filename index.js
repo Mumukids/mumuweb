@@ -174,24 +174,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//campaign
-document.addEventListener('DOMContentLoaded', function() {
-    const wrapper = document.querySelector('.slides-wrapper');
-    const totalImages = 25; // 共25张照片
-    
-    // 清空容器（确保没有残留内容）
-    wrapper.innerHTML = '';
+// 開啟彈出視窗
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = "flex";
+    document.body.style.overflow = "hidden"; // 防止背景滾動
+}
 
-    // 动态加载所有照片
-    for (let i = 1; i <= totalImages; i++) {
-        wrapper.innerHTML += `
-            <div class="slide">
-                <img src="/image/campaign/${i}.jpg" alt="活動照片 ${i}">
-            </div>
-        `;
-        console.log(`已添加照片: /image/campaign/${i}.jpg`); // 调试用
+// 關閉彈出視窗
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+    document.body.style.overflow = "auto"; // 恢復背景滾動
+}
+
+// 點擊彈出視窗外部關閉
+window.onclick = function(event) {
+    if (event.target.className === "popup") {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto"; // 恢復背景滾動
     }
-
-    // 立即检查生成的HTML（调试用）
-    console.log("生成的HTML：", wrapper.innerHTML);
-});
+}

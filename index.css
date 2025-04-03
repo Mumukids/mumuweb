@@ -58,8 +58,10 @@ section {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #ffe3b5; /* 可根據需要調整 */
-    position: relative;
+    position: sticky;
     z-index: 1000;
+    top: 0;
+    width: 100%;
 }
 
 /* Logo 樣式 */
@@ -98,7 +100,7 @@ section {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
+    background-color: #fff0e2;
     min-width: 200px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     z-index: 1;
@@ -256,10 +258,25 @@ section {
     /* 移除電腦版的懸停效果 */
     .nav a:hover {
         transform: none;
+        background-color: #fff0e2;
+    }
+
+    .nav a::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('/image/Normal/Greeny.svg'); /* 使用你的圖標 */
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 8px;
+        background-color: #fff0e2;
     }
     
     .nav a:hover::before {
-        display: none;
+        display: inline-block;
+        background-color: #fff0e2;
+        
     }
     
     /* 手機版點擊效果 */
@@ -601,6 +618,18 @@ button {
     .slider-nav {
         padding: 10px;
     }
+}
+
+/*campaign*/
+#campaign {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 設置區段高度為視窗高度 */
+    overflow: hidden; /* 隱藏超出範圍的內容 */
+    display: flex; /* 啟用 Flexbox */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    background-color: #FDF4E6 /* 設定背景顏色為黑色，避免空白顯示 */
 }
 
 /* Music Playlist*/

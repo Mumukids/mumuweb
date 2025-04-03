@@ -58,9 +58,10 @@ section {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #ffe3b5; /* 可根據需要調整 */
-    position: sticky;
+    position: fixed;
     z-index: 1000;
     top: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -95,6 +96,14 @@ section {
 .dropdown {
     position: relative;
 }
+
+/* 確保所有 dropdown 裡的 a 間距一致 */
+.dropdown a {
+    padding: 2rem; /* 這裡的 2rem 可以調整 */
+    display: inline-block; /* 確保 padding 有效 */
+    white-space: nowrap;
+}
+
 
 /* 下拉內容 (隱藏狀態) */
 .dropdown-content {
@@ -191,10 +200,15 @@ section {
 
     .nav.active {
     display: flex;
+    background-color: #fff0e2;
     }
     
     .dropdown {
         width: 100%;
+    }
+
+    .dropdown a {
+        display: block; /* 確保 padding 有效 */
     }
     
     .dropdown-content {
@@ -258,7 +272,6 @@ section {
     /* 移除電腦版的懸停效果 */
     .nav a:hover {
         transform: none;
-        background-color: #fff0e2;
     }
 
     .nav a::before {
@@ -270,7 +283,6 @@ section {
         background-size: contain;
         background-repeat: no-repeat;
         margin-right: 8px;
-        background-color: #fff0e2;
     }
     
     .nav a:hover::before {

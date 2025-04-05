@@ -6,6 +6,29 @@
     font-style: normal;
 }
 
+html p {
+    font-size: min(3vw, 15px); /* 讓 1rem 隨視窗變化 */
+}
+
+html h2 {
+    font-size: min(5vw, 28px); /* 讓 1rem 隨視窗變化 */
+    padding-left: 0; /* 移除多餘的左側間距 */
+    margin-left: 0; /* 確保沒有左邊外距 */
+}
+
+body {
+    font-family: "Myjf", sans-serif;
+    color: #845A07;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    padding-top: 40px;
+}
+
 section {
     width: 100vw;
     margin: 0 auto;
@@ -13,13 +36,20 @@ section {
     scroll-margin-top: 80px; /*避免標題被擋住*/
     position: relative;
     padding-top: 20px;
-    background-color: #fdf0db;
+    background-color: #fff0e2;
 }
-
 .content {
     width: min(80vw, 800px); /* 讓內容根據螢幕縮放 */
     max-width: 800px; /* 限制最大寬度 */
   }
+  
+  
+/* 基礎樣式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* 導航列容器 */
 .navbar {

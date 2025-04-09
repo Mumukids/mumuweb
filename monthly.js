@@ -133,3 +133,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const image = document.getElementById('moving-image');
+    const container = document.querySelector('#signup .container');
+    let direction = 1; // 1表示向右，-1表示向左
+    const speed = 2; // 移动速度
+    
+    function animateImage() {
+        // 获取当前图片位置
+        const currentLeft = parseInt(window.getComputedStyle(image).left);
+        const containerWidth = container.offsetWidth;
+        const imageWidth = image.offsetWidth;
+        
+        // 计算新位置
+        let newLeft = currentLeft + (speed * direction);
+        
+        // 边界检测
+        if (newLeft <= 0) {
+            newLeft = 0;
+            direction = 1; // 碰到左边界改为向右
+        } else if (newLeft >= containerWidth - imageWidth) {
+            newLeft = containerWidth - imageWidth;
+            direction = -1; // 碰到右边界改为向左
+        }
+        
+        // 应用新位置
+        image.style.left = newLeft + 'px';
+        
+        // 继续动画
+        requestAnimationFrame(animateImage);
+    }
+    
+    // 开始动画
+    animateImage();
+});

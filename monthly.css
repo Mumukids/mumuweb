@@ -295,3 +295,15 @@ section {
         padding: 0.75rem 1rem;
     }
 }
+
+#signup .container {
+    position: relative;
+    height: 100px; /* 根据你的图片高度调整 */
+    overflow: hidden; /* 防止图片超出容器 */
+}
+
+#moving-image {
+    position: absolute;
+    left: 0;
+    transition: left 0.5s ease-in-out; /* 平滑过渡效果 */
+}

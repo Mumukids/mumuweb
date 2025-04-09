@@ -137,34 +137,37 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const image = document.getElementById('moving-image');
     const container = document.querySelector('#signup .container');
-    let direction = 1; // 1表示向右，-1表示向左
-    const speed = 2; // 移动速度
     
-    function animateImage() {
-        // 获取当前图片位置
-        const currentLeft = parseInt(window.getComputedStyle(image).left);
-        const containerWidth = container.offsetWidth;
+    // 确保图片加载完成
+    image.onload = function() {
         const imageWidth = image.offsetWidth;
+        const containerWidth = container.offsetWidth;
+        let direction = -1; // 初始向左移动
+        const speed = 2;
         
-        // 计算新位置
-        let newLeft = currentLeft + (speed * direction);
+        // 初始强制靠右
+        image.style.transform = `translateX(${containerWidth - imageWidth}px)`;
         
-        // 边界检测
-        if (newLeft <= 0) {
-            newLeft = 0;
-            direction = 1; // 碰到左边界改为向右
-        } else if (newLeft >= containerWidth - imageWidth) {
-            newLeft = containerWidth - imageWidth;
-            direction = -1; // 碰到右边界改为向左
+        function animate() {
+            const currentX = parseInt(image.style.transform.split('(')[1]) || 0;
+            let newX = currentX + (speed * direction);
+            
+            // 边界检测
+            if (newX <= 0) {
+                newX = 0;
+                direction = 1; // 向右
+            } else if (newX >= containerWidth - imageWidth) {
+                newX = containerWidth - imageWidth;
+                direction = -1; // 向左
+            }
+            
+            image.style.transform = `translateX(${newX}px)`;
+            requestAnimationFrame(animate);
         }
         
-        // 应用新位置
-        image.style.left = newLeft + 'px';
-        
-        // 继续动画
-        requestAnimationFrame(animateImage);
-    }
+        animate();
+    };
     
-    // 开始动画
-    animateImage();
+    // 如果图片已缓存
+    if (image.complete) image.onload();
 });

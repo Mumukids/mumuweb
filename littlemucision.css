@@ -22,28 +22,17 @@ body {
 }
 
 * {
-    box-sizing: border-box;
-}
-
-main {
-    padding-top: 40px;
-}
-
-section {
-    width: 100vw;                /* 直接滿版 */
-    margin: 0 auto;
-    scroll-margin-top: 80px;
-    position: relative;
-    padding: 0;
-    background-color: #fff0e2;
-}
-
-
-/* 基礎樣式重置 */
-* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+section {
+    width: 100%; /* 改用百分比而非 vw */
+    min-height: 100vh;
+    overflow: hidden; /* 确保裁剪溢出内容 */
+    background-color: #fff0e2;
+    position: relative; /* 建立新的定位上下文 */
 }
 
 /* 導航列容器 */
@@ -293,23 +282,54 @@ section {
     }
 }
 
-.detail {
-    width: 100vw;                /* 直接滿版 */
+/* 圖片容器樣式 */
+.image-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/*contact那欄的樣式*/
+#contact {
     padding: 0;
     margin: 0;
+    background: #FDF4E6;
+    position: relative; /* 讓內部元素可以絕對定位 */
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
-
-.detail img {
-    width: 100vw;                /* 滿版圖片 */
-    height: auto;                /* 自動等比縮放 */
-    display: block;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
+.image-container {
+    position: relative;         /* 父容器設為相對定位 */
+    width: 100%;                /* 讓容器填滿父元素寬度 */
+    height: 100%;
 }
 
-
-
+.image-container img {
+    width: 100%;                /* 讓圖片填滿容器 */
+    height: auto;               /* 保持圖片比例 */
+    display: block;             /* 避免多餘空間 */
+}
+.overlay-text {
+    position: absolute;         /* 絕對定位文字 */
+    top: 30%;                   /* 垂直置中 */
+    left: 50%;                  /* 水平置中 */
+    transform: translate(-50%, -30%); /* 精準置中 */
+    color: #845A07;               /* 文字顏色 */
+    text-align: center;         /* 文字置中對齊 */
+    padding: 20px;              /* 內距，讓文字區塊更好看 */
+    border-radius: 10px;        /* 圓角邊框 */
+}
+/* 超連結樣式 */
+.overlay-text a {
+    text-decoration: none; /* 移除底線 */
+    color: inherit; /* 讓顏色與父元素一致 */
+}

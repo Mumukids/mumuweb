@@ -1,3 +1,4 @@
+
 /* hamburger */
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
@@ -133,3 +134,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// 開啟彈出視窗
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = "flex";
+    document.body.style.overflow = "hidden"; // 防止背景滾動
+}
+
+// 關閉彈出視窗
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+    document.body.style.overflow = "auto"; // 恢復背景滾動
+}
+
+// 點擊彈出視窗外部關閉
+window.onclick = function(event) {
+    if (event.target.className === "popup") {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto"; // 恢復背景滾動
+    }
+}

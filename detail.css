@@ -1,3 +1,4 @@
+/* 整個頁面字型設定 */
 @font-face {
     font-family: 'Myjf'; /* 自訂字型名稱 */
     src: url('/fonts/jf-openhuninn-2.1.ttf') format('truetype');
@@ -21,33 +22,17 @@ body {
 }
 
 * {
-    box-sizing: border-box;
-}
-
-main {
-    padding-top: 40px;
-}
-
-section {
-    width: 100vw;
-    margin: 0 auto;
-    max-width: none; /* 限制最大寬度，避免過寬 */
-    scroll-margin-top: 80px; /*避免標題被擋住*/
-    position: relative;
-    padding-top: 20px;
-    background-color: #fff0e2;
-}
-.content {
-    width: min(80vw, 800px); /* 讓內容根據螢幕縮放 */
-    max-width: 800px; /* 限制最大寬度 */
-  }
-  
-  
-/* 基礎樣式重置 */
-* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+section {
+    width: 100%; /* 改用百分比而非 vw */
+    min-height: 100vh;
+    overflow: hidden; /* 确保裁剪溢出内容 */
+    background-color: #fff0e2;
+    position: relative; /* 建立新的定位上下文 */
 }
 
 /* 導航列容器 */
@@ -310,6 +295,13 @@ section {
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+/* 針對 babyart 區塊的特殊調整 */
+#babyart {
+    padding-top: 0; /* 移除頂部 padding 讓圖片緊貼導航列 */
+    padding-bottom: 0; /* 可選，根據需要調整 */
+    min-height: auto; /* 讓高度由圖片決定 */
 }
 
 /*contact那欄的樣式*/

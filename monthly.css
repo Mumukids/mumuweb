@@ -31,11 +31,9 @@ main {
 
 section {
     width: 100vw;
-    margin: 0 auto;
     max-width: none; /* 限制最大寬度，避免過寬 */
-    scroll-margin-top: 80px; /*避免標題被擋住*/
+    scroll-margin-top: 60px; /*避免標題被擋住*/
     position: relative;
-    padding-top: 20px;
     background-color: #fff0e2;
 }
 .content {
